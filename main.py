@@ -10,5 +10,15 @@ def home():
 def about():
     return render_template("about.html")
 
+@app.route('/api/v1/<station>/<date>')
+def api(station,date):
+    temperature = 34
+    data = {
+        "station": station,
+        "date": date,
+        "temperature": temperature
+    }
+    return data
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
